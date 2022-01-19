@@ -1,0 +1,147 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+button {
+    outline: none!important;
+    border: none;
+    background: 0 0
+}
+
+iframe {
+    border: none!important
+}
+
+.container-contact100 {
+    width: 100%;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    z-index: 1
+}
+
+.container-contact100::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(93,84,240,.5);
+    background: -webkit-linear-gradient(left,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+    pointer-events: none
+}
+/*contact100-map Arkaplan 360 kapsayıcı division stili*/
+.contact100-map {
+    position: absolute; /*pozisyonu relative olan kapsayıcısının alt elemanı.*/
+    z-index: -2;        /*Katman değeri -2 olması en arkada olması anlamına gelir ama burada önemli konu z-index her zaman absolute değer ise çalışır Relative değerlerin z-index olmaz!*/
+    width: 100%;        /*pozisyonu relative kapsayıcısının sınırları boyunca genişliği 100% yapar.*/
+    height: 100%;       /*pozisyonu relative kapsayıcısının sınırları boyunca yüksekliği 100% yapar.*/
+    top: 0;             /*pozisyonu relative kapsayıcısının sınırları yüksekliği 0 dan başlatır.*/
+    left: 0             /*pozisyonu relative kapsayıcısının sınırları sol taraftan 0 dan başlatır.*/
+}
+
+.wrap-contact100 {
+    width: 800px;
+    height: 900px;
+    margin-left: auto;
+    margin-right: 0;
+    /* 0.5 opacity form arkaplan gradient backgroun color */
+    background: -webkit-linear-gradient(left,rgba(0, 0, 0, 0.5),rgb(100, 0, 139));
+    
+    padding: 72px 150px 25px;
+    box-shadow: 0 3px 20px 0 rgba(0,0,0,.1);
+}
+
+.contact100-form {
+    width: 100%
+}
+
+.contact100-form-title {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: rgb(163, 163, 163);
+    line-height: 1.2;
+    text-align: left;
+    padding-bottom: 34px
+}
+
+.wrap-input100 {
+    width: 100%;
+    resize: none;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.473);
+    border-radius: 20px;
+    margin-bottom: 30px
+}
+
+.input100 {
+    display: block;
+    width: 100%;
+    background: 0 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #808080;
+    line-height: 1.2
+}
+
+input.input100 {
+    height: 62px;
+    padding: 0 20px 0 23px
+}
+
+textarea.input100 {
+    min-height: 330px;
+    padding: 19px 20px 0 23px
+}
+
+.container-contact100-form-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 43px
+}
+
+.contact100-form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 160px;
+    height: 42px;
+    background: rgba(159, 33, 163, 0.397);
+    border-radius: 21px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Google Auto Fill Settings */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 45px rgb(86, 2, 118) inset !important;
+ border-radius: 10px;
+}

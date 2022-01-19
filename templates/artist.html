@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<!--Entete Page Artist-->
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/artist.css">
+    <link rel='icon' href="/img/favicon.ico" type='image/ico'>
+    <script rel="script" src="/js/app.js"></script>
+    <title>Artists</title>
+    <div class="navbar">
+        <a class="active" href="/"><i class="fa fa-fw fa-home"></i> HOME</a>
+        <a href="/contact"><i class="fa fa-fw fa-envelope"></i> CONTACT</a>
+        <!--        <a href="/search"><i class="fa fa-fw fa-search"></i> SEARCH</a>-->
+        <div class="loupe">
+        <div class="fa fa-fw fa-search" id="searchDesign"></div><input class="search" type="text" onkeyup="findArtist({{.}})"
+                                                                 name="searchBar" id="searchBar"
+                                                                 placeholder="search an artist"></div>
+    </div>
+</head>
+
+<!--Block Body-->
+<body class="mainpage">
+<section>
+
+</section>
+
+<!--Artist Card With Infomations-->
+<div id="artistContainer" class="container">
+    {{range .}}
+
+        <div class="box">
+
+            <img class="image" src={{.Image}} alt="artist">
+
+            <div class="">
+                <h2>{{.Name}}</h2>
+                <p> {{.CreationDate}} </p>
+                <!--information cachée : input = hidden-->
+                <div class="membres">
+                    {{range .Members}}
+                            <span>{{.}}</span>
+                    {{end}}
+                </div>
+            </div>
+
+            <div class="infosupp">
+                <a href="/map?id={{.Id}}">Savoir + </a>
+            </div>
+
+        </div>
+    {{end}}
+</div>
+</body>
+
+<!--Footer Page-->
+<footer class="footer">
+    <p>
+        Ytrack - Groupie Tracker - Lyon Ynov Campus
+    </p>
+</footer>
+
+
+<!--JavaScript Block Search Bar-->
+//queryselector -> box :> for each
+// display
+<script>
+    // let hpArtist = [];
+    const searchBar = document.getElementById('searchBar');
+
+    searchBar.addEventListener("keyup", (e) => {
+        const input = searchBar.value
+        console.log(input)
+    });
+    //
+    // searchBar.addEventListener('keyup', (e) => {
+    //     const searchString = e.target.value;
+    //     const filteredArtist = hpArtist.filter(artist => {
+    //         return artist.name.includes(searchString) || artist.members.includes(searchString)
+    //     });
+    //     console.log(filteredArtist)
+    // });
+    //
+    // const loadArtist = async () => {
+    //     try {
+    //         const res = await fetch("https://groupietrackers.herokuapp.com/api/artists");
+    //         let hpArtist = await res.json();
+    //         console.log(hpArtist);
+    //     } catch (err) {
+    //         console.error(err);
+    //     }
+    // };
+    //
+    // const displayArtist = (artists) => {
+    //     const htmlString = artists
+    //         .map((artists)) => {
+    //         return
+    //     }
+    // }
+</script>
+</html>
